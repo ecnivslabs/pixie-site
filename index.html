@@ -3,8 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crank: the Shapeshifting AI Harness</title>
-<meta name="description" content="Crank is the Shapeshifting AI Harness: ask for a capability it doesn't have and it builds that into itself, live, writing its own tools, rewriting its own interface, and retuning how it runs to match.">
+<title>Pixie: the Shapeshifting AI Harness</title>
+<meta name="description" content="Pixie is the Shapeshifting AI Harness: ask for a capability it doesn't have and it builds that into itself, live, writing its own tools, rewriting its own interface, and retuning how it runs to match.">
+<meta name="theme-color" content="#fbfbf9">
+<link rel="canonical" href="https://pixie.ecnivs.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixie">
+<meta property="og:title" content="Pixie &middot; The Shapeshifting AI Harness">
+<meta property="og:description" content="Pixie is the Shapeshifting AI Harness. Ask for a capability and Pixie builds it into itself, live.">
+<meta property="og:url" content="https://pixie.ecnivs.com/">
+<meta property="og:image" content="https://pixie.ecnivs.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pixie terminal banner with pixel cat">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pixie &middot; The Shapeshifting AI Harness">
+<meta name="twitter:description" content="Pixie is the Shapeshifting AI Harness. Ask for a capability and Pixie builds it into itself, live.">
+<meta name="twitter:image" content="https://pixie.ecnivs.com/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,14 +28,14 @@
 <body>
 <div class="wrap">
   <div class="topbar">
-    <div class="logo">Crank</div>
+    <div class="logo">Pixie</div>
     <div class="badge">Waitlist open</div>
   </div>
 
   <div class="hero">
     <div class="section-tag">The Shapeshifting AI Harness</div>
     <h1>Ask for it.<br>It <span class="hl">becomes</span><br>that.</h1>
-    <p class="sub">Most harnesses ship with a fixed toolset: a set list of commands, extended later by whatever plugins or MCP servers you bolt on by hand. Crank skips the bolting-on. Ask for a video player and it writes one, mounts it, and the harness in front of you is a video editor now. Ask for something else tomorrow, and it's that instead.</p>
+    <p class="sub">Most harnesses ship with a fixed toolset: a set list of commands, extended later by whatever plugins or MCP servers you bolt on by hand. Pixie skips the bolting-on. Ask for a video player and it writes one, mounts it, and the harness in front of you is a video editor now. Ask for something else tomorrow, and it's that instead.</p>
 
     <form class="waitlist" id="waitlist-form">
       <input type="text" name="name" placeholder="Full name" required>
@@ -34,19 +49,31 @@
   <div class="termwin">
     <div class="termbar">
       <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-      <div class="termtitle">Crank</div>
+      <div class="termtitle">Pixie</div>
     </div>
     <div class="termbody">
-      <pre class="termpre"><span class="termbanner"><span class="dim"> v1.0.0</span>
-<span class="glyph-run"> ██████╗██████╗  █████╗ ███╗   ██╗██╗  ██╗</span>
-<span class="glyph-run">██╔════╝██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝</span>
-<span class="glyph-run">██║     ██████╔╝███████║██╔██╗ ██║█████╔╝ </span>
-<span class="glyph-run">██║     ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ </span>
-<span class="glyph-run">╚██████╗██║  ██║██║  ██║██║ ╚████║██║  ██╗</span>
-<span class="glyph-run"> ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝</span>
-<span class="glyph-run">                high effort</span></span>
-
-<span class="term-userbox">add a player so I can scrub through these takes</span>
+      <div class="pixie-banner" role="img" aria-label="Pixie terminal banner">
+        <div class="pixie-mascot" aria-hidden="true">
+          <div><span class="mascot-ginger">  ▟▙</span><span class="mascot-white">▄▄</span><span class="mascot-ginger">▟▙</span></div>
+          <div><span class="mascot-ginger">  █ </span><span class="mascot-white">█</span><span class="mascot-ginger"> █</span></div>
+          <div class="mascot-white"> ≡██████≡</div>
+          <div class="mascot-white">    ██</div>
+          <div><span class="mascot-white">   █</span><span class="mascot-ginger">█</span><span class="mascot-white">██   ▄</span></div>
+          <div><span class="mascot-white">  █</span><span class="mascot-ginger">██</span><span class="mascot-white">██  █</span></div>
+          <div><span class="mascot-white">  ██████</span><span class="mascot-ginger">▄▄▀</span></div>
+        </div>
+        <div class="pixie-banner-copy">
+          <div class="dim">v1.0.0</div>
+          <div class="pixie-logo" aria-hidden="true">
+            <div class="logo-ginger">█▀▀█ ▀ █  █ ▀ █▀▀█</div>
+            <div class="logo-white">█▄▄█ █  ██  █ █▀▀▀</div>
+            <div class="logo-white">█    █ █  █ █ █▄▄▄</div>
+          </div>
+          <div class="dim">space-bunny-free with high effort</div>
+          <div class="dim">/workspace/pixie</div>
+        </div>
+      </div>
+      <pre class="termpre"><span class="term-userbox">add a player so I can scrub through these takes</span>
 <span class="dim">  thought for 2.1s</span>
 <span class="dim">No player mounted. Building one, not a workaround.</span>
 <span class="glyph-ok">●</span> clip-player</pre>
@@ -72,8 +99,8 @@
   <section class="manifesto">
     <div class="section-tag">The argument</div>
     <h2>Asking it to change is not the same as configuring it.</h2>
-    <p class="lead">Plugins and MCP servers let you bolt more of the same kind of thing onto a harness that otherwise stays fixed. You still have to find the extension, install it, and hope it fits the shape of the work in front of you. Crank skips the search: tell it what you need, and it builds that into itself, live.</p>
-    <p class="lead">Say you're cutting video and ask for a player so you can scrub through takes. Crank writes the player, checks it against a real compiler, trial-runs it in a throwaway copy of the session, and mounts it, no restart required. Ask for a timeline next and it adds that too. Enough requests like that, and the harness you started with is a video editor now, built one ask at a time.</p>
+    <p class="lead">Plugins and MCP servers let you bolt more of the same kind of thing onto a harness that otherwise stays fixed. You still have to find the extension, install it, and hope it fits the shape of the work in front of you. Pixie skips the search: tell it what you need, and it builds that into itself, live.</p>
+    <p class="lead">Say you're cutting video and ask for a player so you can scrub through takes. Pixie writes the player, checks it against a real compiler, trial-runs it in a throwaway copy of the session, and mounts it, no restart required. Ask for a timeline next and it adds that too. Enough requests like that, and the harness you started with is a video editor now, built one ask at a time.</p>
     <p class="lead">It also keeps half an eye on its own tool calls: catch it hand-building the same thing three times and it'll write the tool without waiting to be asked. That's a bonus habit, not the pitch. The pitch is that you ask, and it becomes what you asked for.</p>
   </section>
 
@@ -84,8 +111,8 @@
 
   <section class="capabilities" data-tabgroup="capabilities">
     <div class="section-tag">In practice</div>
-    <h2>What can you turn Crank into?</h2>
-    <p class="lead">Ask, and Crank builds the tool, mounts the panel, or retunes the loop to match. Every change is gated the same way: boundary-checked, typechecked against your real compiler, and trial-run in a throwaway copy of your session before it touches anything real.</p>
+    <h2>What can you turn Pixie into?</h2>
+    <p class="lead">Ask, and Pixie builds the tool, mounts the panel, or retunes the loop to match. Every change is gated the same way: boundary-checked, typechecked against your real compiler, and trial-run in a throwaway copy of your session before it touches anything real.</p>
 
     <div class="cappills">
       <button class="pill active" data-tab="coding">Code</button>
@@ -99,7 +126,7 @@
         <div class="capwindow">
           <div class="termbar">
             <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Crank</div>
+            <div class="termtitle">Pixie</div>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">the search endpoint is slow under load</span>
@@ -122,7 +149,7 @@
         <div class="capwindow">
           <div class="termbar">
             <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Crank</div>
+            <div class="termtitle">Pixie</div>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">turn this into a live watchlist, not numbers in a log</span>
@@ -166,7 +193,7 @@
         </div>
         <div class="capcopy">
           <h3>Ask for it. It becomes the app.</h3>
-          <p>Say what you actually need, and Crank doesn't bolt on a single chart: it builds the whole screen, a ticker tape, a watchlist, sparklines, mounted together in the same terminal. You ask for the app; it becomes that app.</p>
+          <p>Say what you actually need, and Pixie doesn't bolt on a single chart: it builds the whole screen, a ticker tape, a watchlist, sparklines, mounted together in the same terminal. You ask for the app; it becomes that app.</p>
         </div>
       </div>
 
@@ -174,7 +201,7 @@
         <div class="capwindow">
           <div class="termbar">
             <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Crank</div>
+            <div class="termtitle">Pixie</div>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">I keep scrolling up to check which files we've touched</span>
@@ -203,7 +230,7 @@
         </div>
         <div class="capcopy">
           <h3>Ask for it. It becomes the interface you need.</h3>
-          <p>Say you're tired of scrolling up to remember which files are in play, and Crank doesn't just answer in text: it pins a running file list to the side and a branch, model, and token count to the bottom, so both stay visible no matter how far the conversation scrolls.</p>
+          <p>Say you're tired of scrolling up to remember which files are in play, and Pixie doesn't just answer in text: it pins a running file list to the side and a branch, model, and token count to the bottom, so both stay visible no matter how far the conversation scrolls.</p>
         </div>
       </div>
 
@@ -211,7 +238,7 @@
         <div class="capwindow">
           <div class="termbar">
             <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Crank</div>
+            <div class="termtitle">Pixie</div>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">verify after every edit, not batches of five</span>
@@ -228,14 +255,14 @@
         </div>
         <div class="capcopy">
           <h3>Not a reminder, a hook</h3>
-          <p>Telling a model to check more often is a suggestion it can forget three files later. Ask once, and Crank wires the check into its own tool-call scaffolding: it fires whether the model remembers or not.</p>
+          <p>Telling a model to check more often is a suggestion it can forget three files later. Ask once, and Pixie wires the check into its own tool-call scaffolding: it fires whether the model remembers or not.</p>
         </div>
       </div>
     </div>
   </section>
 
   <div class="grid3">
-    <div><h3>Reshapes on request</h3><p>Ask for a capability it doesn't have and Crank builds it into itself: a panel, a tool, a command, whatever the work calls for, mounted live.</p></div>
+    <div><h3>Reshapes on request</h3><p>Ask for a capability it doesn't have and Pixie builds it into itself: a panel, a tool, a command, whatever the work calls for, mounted live.</p></div>
     <div><h3>Rewriting its own interface</h3><p>New panels and commands mount into a live session, no restart, with automatic rollback if a change misbehaves.</p></div>
     <div><h3>Engineering-grade</h3><p>Real LSP diagnostics, real typecheck gates, real test runs. Eight providers with automatic failover if one goes down mid-session.</p></div>
     <div><h3>Honest by default</h3><p>Same doctrine every session: real implementations, no placeholders, no silent failures. A bad approach gets called out, not smoothed over. It'll also flag when you're repeating yourself, uninvited.</p></div>
@@ -244,7 +271,7 @@
   <section class="feature">
     <div class="section-tag">Join the waitlist</div>
     <h2>An agent that becomes what you ask it to be</h2>
-    <p class="lead">Every change goes through the same gate: a boundary check keeps generated code out of Crank's own internals, an incremental typecheck runs against your real compiler, and a trial run happens in a throwaway copy of your session before anything touches the real one. Only then does it go live; persist it once and it survives restarts. Ask for a player and get a video editor. Ask for a dashboard panel and get a different tool entirely. And yes, it also keeps an eye on its own tool calls: catch it doing the same manual thing three times in a row, and it'll build the tool without being asked. That's the bonus. The point is that you ask, and Crank becomes it.</p>
+    <p class="lead">Every change goes through the same gate: a boundary check keeps generated code out of Pixie's own internals, an incremental typecheck runs against your real compiler, and a trial run happens in a throwaway copy of your session before anything touches the real one. Only then does it go live; persist it once and it survives restarts. Ask for a player and get a video editor. Ask for a dashboard panel and get a different tool entirely. And yes, it also keeps an eye on its own tool calls: catch it doing the same manual thing three times in a row, and it'll build the tool without being asked. That's the bonus. The point is that you ask, and Pixie becomes it.</p>
 
     <form class="waitlist" id="waitlist-form-2">
       <input type="text" name="name" placeholder="Full name" required>
@@ -258,11 +285,11 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo">Crank</div>
+        <div class="footer-logo">Pixie</div>
         <p class="footer-tag">A product of <a href="https://ecnivs.com" target="_blank" rel="noreferrer">ecnivs</a>.</p>
       </div>
       <nav class="footer-links">
-        <a href="https://github.com/ecnivslabs" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/ecnivslabs/pixie" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://ecnivs.com/privacy/" target="_blank" rel="noreferrer">Privacy</a>
         <a href="https://ecnivs.com/terms/" target="_blank" rel="noreferrer">Terms</a>
       </nav>

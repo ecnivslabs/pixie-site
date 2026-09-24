@@ -40,7 +40,7 @@ for (const form of document.querySelectorAll("form.waitlist")) {
 const SPINNER_FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
 const spinnerEls = document.querySelectorAll(".spinner-frame");
 let spinnerFrame = 0;
-if (spinnerEls.length > 0) {
+if (spinnerEls.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   setInterval(() => {
     spinnerFrame = (spinnerFrame + 1) % SPINNER_FRAMES.length;
     for (const el of spinnerEls) el.textContent = SPINNER_FRAMES[spinnerFrame];
