@@ -15,6 +15,7 @@ function bindWaitlistForm(form) {
 
     const button = form.querySelector("button");
     button.disabled = true;
+    fineprint.textContent = "Sending your request…";
 
     const body = new URLSearchParams();
     body.set(ENTRY_NAME, name);
@@ -28,6 +29,7 @@ function bindWaitlistForm(form) {
       fineprint.hidden = true;
       success.hidden = false;
     } catch {
+      fineprint.textContent = "Could not send your request. Please try again.";
       button.disabled = false;
     }
   });
@@ -48,13 +50,41 @@ if (spinnerEls.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce
 }
 
 for (const group of document.querySelectorAll("[data-tabgroup]")) {
-  const tabs = group.querySelectorAll("[data-tab]");
+  const tabs = [...group.querySelectorAll("[data-tab]")];
   const panels = group.querySelectorAll("[data-panel]");
+  group.querySelector(".cappills").setAttribute("role", "tablist");
+  group.querySelector(".cappills").setAttribute("aria-label", "Pixie capabilities");
+  function selectTab(tab) {
+    for (const candidate of tabs) {
+      const selected = candidate === tab;
+      candidate.classList.toggle("active", selected);
+      candidate.setAttribute("aria-selected", String(selected));
+      candidate.tabIndex = selected ? 0 : -1;
+    }
+    for (const panel of panels) panel.hidden = panel.dataset.panel !== tab.dataset.tab;
+  }
+  for (const panel of panels) {
+    panel.id = `${group.dataset.tabgroup}-${panel.dataset.panel}-panel`;
+    panel.setAttribute("role", "tabpanel");
+    panel.setAttribute("aria-labelledby", `${group.dataset.tabgroup}-${panel.dataset.panel}-tab`);
+    panel.tabIndex = 0;
+  }
   for (const tab of tabs) {
-    tab.addEventListener("click", () => {
-      const target = tab.dataset.tab;
-      for (const t of tabs) t.classList.toggle("active", t === tab);
-      for (const panel of panels) panel.hidden = panel.dataset.panel !== target;
+    tab.id = `${group.dataset.tabgroup}-${tab.dataset.tab}-tab`;
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-controls", `${group.dataset.tabgroup}-${tab.dataset.tab}-panel`);
+    tab.addEventListener("click", () => selectTab(tab));
+    tab.addEventListener("keydown", (event) => {
+      let index = tabs.indexOf(tab);
+      if (event.key === "ArrowRight") index = (index + 1) % tabs.length;
+      else if (event.key === "ArrowLeft") index = (index - 1 + tabs.length) % tabs.length;
+      else if (event.key === "Home") index = 0;
+      else if (event.key === "End") index = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      selectTab(tabs[index]);
+      tabs[index].focus();
     });
   }
+  selectTab(tabs.find((tab) => tab.classList.contains("active")) || tabs[0]);
 }

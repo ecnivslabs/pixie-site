@@ -4,129 +4,184 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pixie: the Shapeshifting AI Harness</title>
-<meta name="description" content="Pixie is the Shapeshifting AI Harness: ask for a capability it doesn't have and it builds that into itself, live, writing its own tools, rewriting its own interface, and retuning how it runs to match.">
-<meta name="theme-color" content="#fbfbf9">
+<meta name="description" content="Pixie is a coding agent that can build its own tools and change its interface as you work. Tell it what you need, and make it your own.">
+<meta name="theme-color" content="#fcfaf7">
 <link rel="canonical" href="https://pixie.ecnivs.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixie">
 <meta property="og:title" content="Pixie &middot; The Shapeshifting AI Harness">
-<meta property="og:description" content="Pixie is the Shapeshifting AI Harness. Ask for a capability and Pixie builds it into itself, live.">
+<meta property="og:description" content="A coding agent that can build its own tools. Tell Pixie what you need, from a repo-specific command to a new panel in your terminal.">
 <meta property="og:url" content="https://pixie.ecnivs.com/">
-<meta property="og:image" content="https://pixie.ecnivs.com/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pixie terminal banner with pixel cat">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pixie &middot; The Shapeshifting AI Harness">
-<meta name="twitter:description" content="Pixie is the Shapeshifting AI Harness. Ask for a capability and Pixie builds it into itself, live.">
-<meta name="twitter:image" content="https://pixie.ecnivs.com/og.png">
+<meta name="twitter:description" content="A coding agent that can build its own tools. Tell Pixie what you need, from a repo-specific command to a new panel in your terminal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="mascot.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
   <div class="topbar">
-    <div class="logo">Pixie</div>
-    <div class="badge">Waitlist open</div>
+    <a class="logo" href="#" aria-label="Pixie home"><img src="mascot.svg" width="26" height="34" alt="">Pixie</a>
+    <a class="badge" href="#waitlist-form">Early access <span aria-hidden="true">↗</span></a>
   </div>
 
+  <main>
+  <div class="hero-layout">
   <div class="hero">
-    <div class="section-tag">The Shapeshifting AI Harness</div>
-    <h1>Ask for it.<br>It <span class="hl">becomes</span><br>that.</h1>
-    <p class="sub">Most harnesses ship with a fixed toolset: a set list of commands, extended later by whatever plugins or MCP servers you bolt on by hand. Pixie skips the bolting-on. Ask for a video player and it writes one, mounts it, and the harness in front of you is a video editor now. Ask for something else tomorrow, and it's that instead.</p>
+    <div class="hero-heading">
+      <h1>Ask <span class="hero-cat-anchor">for
+        <svg class="hanging-cat" viewBox="0 0 80 136" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="hanging-cat-outline" filterUnits="userSpaceOnUse" x="-16" y="-14" width="112" height="170" color-interpolation-filters="sRGB">
+              <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="silhouette"/>
+              <feFlood flood-color="#fcfaf7" result="outline-color"/>
+              <feComposite in="outline-color" in2="silhouette" operator="in" result="outline"/>
+              <feMerge><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#hanging-cat-outline)">
+            <g class="hanging-cat-sway">
+              <path class="hanging-cat-tail" fill="#cd9153" stroke="#a5652d" stroke-width="2" d="M46 99h17v-9h7V75h7v21h-7v10H46Z"/>
+              <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M22 36V5h10v35h19V5h10v46h-5v55h-7v15H37v-13H26v13H14v-18h5V57h-5V36Z"/>
+              <path fill="#cd9153" d="M20 71h9v16h-9Z M43 86h12v18h-7v8h-7V98h-8v-9h10Z"/>
+              <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M14 35V23h7v6h8v6h17v-6h8v-6h7v17h6v23h-8v9H22v-7H10V42h4Z"/>
+              <path fill="#cd9153" d="M15 35V25h5v6h9v6h8v10H24v9H11V43h4Z M46 36v-5h9v-6h5v16h6v15H51V44h-9v-8Z"/>
+              <g class="hanging-cat-eyes" fill="#29231e"><path d="M22 46h7v9h-7Z M48 46h7v9h-7Z"/><path fill="#fcfaf7" d="M23 47h2v2h-2Z M49 47h2v2h-2Z"/></g>
+              <path fill="#995e4a" d="M35 58h7v4h-7Z"/>
+              <path stroke="#a5652d" stroke-width="1.4" d="M4 59h16m36 0h16M6 64h14m36 0h14"/>
+              <path fill="#59665b" d="M25 71h29v5H25Z"/><path fill="#343f35" d="M37 76h7v7h-7Z"/>
+            </g>
+            <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M20 2h14v9H20Z M49 2h14v9H49Z"/>
+            <path stroke="#cbb9a5" stroke-width="1.5" d="M25 3v5m5-5v5m24-5v5m5-5v5"/>
+          </g>
+        </svg>
+      </span> it.<br>It <span class="hl">becomes</span><br>that.</h1>
+
+    </div>
+    <p class="sub">A coding agent you can make your own.</p>
+    <p class="hero-description">Start with the code. When you need a tool Pixie doesn't have, ask for it. It can write the tool and add it to the session while you work.</p>
 
     <form class="waitlist" id="waitlist-form">
-      <input type="text" name="name" placeholder="Full name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <button type="submit">Join waitlist &rarr;</button>
+      <input type="text" name="name" aria-label="Full name" autocomplete="name" placeholder="Full name" required>
+      <input type="email" name="email" aria-label="Email address" autocomplete="email" placeholder="Email address" required>
+      <div class="signup-action">
+        <button type="submit">Join waitlist &rarr;</button>
+      <svg class="hero-cat" viewBox="0 0 200 140" aria-hidden="true" focusable="false">
+        <ellipse cx="109" cy="126" rx="75" ry="5" fill="#e5dbd0" opacity=".5"/>
+        <path class="hero-cat-tail" fill="#cd9153" stroke="#a5652d" stroke-width="2" d="M151 111h24V99h10V69h-7V58h8v7h7v37h-8v17h-34Z"/>
+        <g class="hero-cat-body">
+          <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M77 78h21V66h44v7h17v12h13v31h-12v8H80v-8H62V94h15Z"/>
+          <path fill="#cd9153" d="M98 67h44v7h17v12h12v15h-18V89h-26V77H98Z M138 98h22v19h-9v6h-22v-12h9Z"/>
+          <path fill="#b97d40" d="M139 69h5v14h-5Z M151 77h5v13h-5Z M162 88h8v5h-8Z"/>
+          <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M73 93h14v18h25v13H61v-7H43v-10h30Z M98 87h13v17h17v13h-26v-7H91V96h7Z"/>
+          <path stroke="#cbb9a5" stroke-width="2" d="M49 115v7m7-7v7m57-11v6m6-6v6"/>
+        </g>
+        <g class="hero-cat-head">
+          <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M47 31V11h8v6h8v12h26V18h8v-7h8v30h7v30h-8v12H62V76H47V65h-7V39h7Z"/>
+          <path fill="#cd9153" d="M48 31V12h6v7h8v12h13v14h-8v13H48V47h-7v-7h7Z M89 30V19h9v-6h6v29h7v14H92V43H81V30Z"/>
+          <path fill="#d9aa91" d="M51 23h5v10h-5Z M97 24h4v10h-4Z"/>
+          <g class="hero-cat-eyes" fill="#29231e">
+            <path d="M53 45h11v13H53Z M88 45h11v13H88Z"/>
+            <path fill="#fcfaf7" d="M55 47h3v3h-3Z M90 47h3v3h-3Z"/>
+          </g>
+          <path fill="#995e4a" d="M72 59h9v5h-9Z M71 68h11v9H71Z"/>
+          <path fill="#d9aa91" d="M74 73h6v4h-6Z"/>
+          <path stroke="#a5652d" stroke-width="1.5" d="M38 61h18m-16 6h16m40-6h18m-18 6h16"/>
+          <path fill="#59665b" d="M63 80h37v6H63Z"/>
+          <path fill="#343f35" d="M78 86h9v9h-9Z"/>
+          <path fill="#a8b5a3" d="M81 88h3v3h-3Z"/>
+        </g>
+      </svg>
+      </div>
     </form>
-    <div class="fineprint" id="waitlist-fineprint">No spam. One email, at launch.</div>
-    <div class="success" id="waitlist-success" hidden>You're in. Watch your inbox.</div>
+    <div class="fineprint" role="status" id="waitlist-fineprint">One email when Pixie launches. No spam.</div>
+    <div class="success" role="status" id="waitlist-success" hidden>Request sent. Watch your inbox.</div>
   </div>
 
   <div class="termwin">
     <div class="termbar">
-      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-      <div class="termtitle">Pixie</div>
+      <span class="terminal-mark" aria-hidden="true">&gt;_</span><div class="termtitle">pixie</div><span class="terminal-label">SESSION PREVIEW</span>
     </div>
     <div class="termbody">
-      <div class="pixie-banner" role="img" aria-label="Pixie terminal banner">
-        <div class="pixie-mascot" aria-hidden="true">
-          <div><span class="mascot-ginger">  ▟▙</span><span class="mascot-white">▄▄</span><span class="mascot-ginger">▟▙</span></div>
-          <div><span class="mascot-ginger">  █ </span><span class="mascot-white">█</span><span class="mascot-ginger"> █</span></div>
-          <div class="mascot-white"> ≡██████≡</div>
-          <div class="mascot-white">    ██</div>
-          <div><span class="mascot-white">   █</span><span class="mascot-ginger">█</span><span class="mascot-white">██   ▄</span></div>
-          <div><span class="mascot-white">  █</span><span class="mascot-ginger">██</span><span class="mascot-white">██  █</span></div>
-          <div><span class="mascot-white">  ██████</span><span class="mascot-ginger">▄▄▀</span></div>
-        </div>
+      <div class="pixie-banner" role="img" aria-label="Pixie terminal banner, ginger and white cat, v1.0.0, Your model · high effort">
+        <pre class="pixie-mascot" aria-hidden="true">  <span class="mascot-ginger">▟▙</span>▄▄<span class="mascot-ginger">▟▙</span>
+  <span class="mascot-ginger">█ </span>██<span class="mascot-ginger"> █</span>
+ ≡██████≡
+    ██
+   <span class="mascot-ginger">█</span>███   <span class="mascot-ginger">▄</span>
+  <span class="mascot-ginger">██</span>████  <span class="mascot-ginger">█</span>
+  ██████<span class="mascot-ginger">▄▄▀</span></pre>
         <div class="pixie-banner-copy">
           <div class="dim">v1.0.0</div>
-          <div class="pixie-logo" aria-hidden="true">
-            <div class="logo-ginger">█▀▀█ ▀ █  █ ▀ █▀▀█</div>
-            <div class="logo-white">█▄▄█ █  ██  █ █▀▀▀</div>
-            <div class="logo-white">█    █ █  █ █ █▄▄▄</div>
-          </div>
-          <div class="dim">space-bunny-free with high effort</div>
-          <div class="dim">/workspace/pixie</div>
+          <pre class="pixie-logo" aria-hidden="true"><span class="logo-ginger">█▀▀█ ▀ █  █ ▀ █▀▀█</span>
+█▄▄█ █  ██  █ █▀▀▀
+█    █ █  █ █ █▄▄▄</pre>
+          <div class="dim">Your model · high effort</div>
+          <div class="dim">Your workspace</div>
         </div>
       </div>
-      <pre class="termpre"><span class="term-userbox">add a player so I can scrub through these takes</span>
-<span class="dim">  thought for 2.1s</span>
-<span class="dim">No player mounted. Building one, not a workaround.</span>
-<span class="glyph-ok">●</span> clip-player</pre>
-      <div class="tuiframe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4V8z" fill="currentColor" stroke="none"></path></svg>
-        <div class="tuitag">clip-player</div>
-        <div class="tuicaption">take_07.mov</div>
-        <div class="tuibar">
-          <span class="tuikeys">⏯ space</span>
-          <div class="tuitrack"><div class="tuifill" style="width:35%"></div></div>
-          <span class="tuitime">00:42 / 01:18</span>
-        </div>
+      <div class="transcript">
+        <div class="term-userbox">add a /review command that checks our conventions</div>
+        <p class="thinking dim">thought for 2.1s</p>
+        <p class="tool-tally dim">Read 3 files, searched for 2 patterns</p>
+        <p>I’ll use this repo’s guidelines for the review.</p>
+        <div class="tool-result"><span class="glyph-ok">●</span> review-command <span class="dim">created</span></div>
+        <div class="terminal-checks"><span class="glyph-ok">✓</span> Boundary check<br><span class="glyph-ok">✓</span> Typecheck<br><span class="glyph-ok">✓</span> Trial run</div>
+        <p><span class="inline-command">/review</span> is ready. You can use it in this session.</p>
+        <p class="tool-tally dim">⣿ Ran 5 tool calls &nbsp; 8.2s · 1.4k tokens</p>
+        <div class="term-userbox">now give it a panel for the findings</div>
+        <p class="thinking"><span class="glyph-run spinner-frame" aria-hidden="true">⠴</span> Thinking… <span class="dim">(esc to interrupt)</span></p>
       </div>
-      <pre class="termpre"><span class="dim">⣿ Ran 5 tool calls  0.5s &middot; 340 tokens</span>
-
-<span class="term-userbox">honestly, just turn this into a full video editor at this point</span>
-<span class="glyph-run spinner-frame">⠴</span> Thinking&hellip; <span class="dim">(0:02 &middot; esc to interrupt)</span>
-
-<span class="prompt-ptr dim">❯</span> <span class="cursor-block">&nbsp;</span></pre>
+      <div class="terminal-input" aria-label="Example Pixie input"><span class="dim">&gt;</span> <span class="cursor-block">&nbsp;</span></div>
+      <div class="terminal-footer"><span>high effort · session active</span><span>shortcuts: ?</span></div>
     </div>
+  </div>
   </div>
 
   <section class="manifesto">
-    <div class="section-tag">The argument</div>
-    <h2>Asking it to change is not the same as configuring it.</h2>
-    <p class="lead">Plugins and MCP servers let you bolt more of the same kind of thing onto a harness that otherwise stays fixed. You still have to find the extension, install it, and hope it fits the shape of the work in front of you. Pixie skips the search: tell it what you need, and it builds that into itself, live.</p>
-    <p class="lead">Say you're cutting video and ask for a player so you can scrub through takes. Pixie writes the player, checks it against a real compiler, trial-runs it in a throwaway copy of the session, and mounts it, no restart required. Ask for a timeline next and it adds that too. Enough requests like that, and the harness you started with is a video editor now, built one ask at a time.</p>
-    <p class="lead">It also keeps half an eye on its own tool calls: catch it hand-building the same thing three times and it'll write the tool without waiting to be asked. That's a bonus habit, not the pitch. The pitch is that you ask, and it becomes what you asked for.</p>
+    <h2>The tool you need might not exist yet.</h2>
+    <p class="lead">Sometimes you need a command that knows your repo’s conventions. Sometimes you need a panel to keep track of a long task. Describe it to Pixie, and it can build it into the session.</p>
+    <p class="lead">It can go beyond coding, too. Ask for a player to scrub through video takes, then a timeline to arrange them. Each request adds another piece to the tool you’re building.</p>
+    <p class="lead">Pixie can also spot repeated work and propose a tool for it. You decide which proposals to add.</p>
   </section>
 
-  <div class="bignum">
-    <div class="n">64%</div>
-    <div class="t">fewer fixed-overhead tokens per turn than eager-loading every tool and skill up front: a harness that only pays for the shape it's actually been asked to take.</div>
-  </div>
+  <section class="bignum" aria-labelledby="token-savings-title">
+    <svg class="peeking-cat" viewBox="0 0 120 96" aria-hidden="true" focusable="false">
+      <g class="peeking-cat-head">
+        <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M27 33V11h8v7h9v14h29V19h9v-8h8v28h8v31H85v14H35V73H21V42h6Z"/>
+        <path fill="#cd9153" d="M28 33V13h6v7h9v14h12v13H40v15H22V43h6Z M74 33V21h9v-8h6v27h8v20H80V46H64V33Z"/>
+        <path fill="#d9aa91" d="M31 24h5v10h-5Z M81 26h5v9h-5Z"/>
+        <g class="peeking-cat-eyes" fill="#29231e"><path d="M36 48h10v12H36Z M73 48h10v12H73Z"/><path fill="#fcfaf7" d="M38 49h3v3h-3Z M75 49h3v3h-3Z"/></g>
+        <path fill="#995e4a" d="M55 63h8v5h-8Z"/>
+        <path stroke="#a5652d" stroke-width="1.5" d="M12 66h23m49 0h23M15 72h20m49 0h20"/>
+        <path fill="#59665b" d="M40 80h40v5H40Z"/>
+      </g>
+      <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M25 78h22v13H25Z M75 78h22v13H75Z"/>
+      <path stroke="#cbb9a5" stroke-width="2" d="M32 83v7m7-7v7m43-7v7m7-7v7"/>
+    </svg>
+    <h2 id="token-savings-title"><span class="token-number"><span class="token-qualifier">Up to</span><span class="n">64%</span></span> <span class="token-label">less token usage.</span></h2>
+    <p class="t">Pixie cuts token overhead through optimizations across the harness.</p>
+  </section>
 
   <section class="capabilities" data-tabgroup="capabilities">
-    <div class="section-tag">In practice</div>
-    <h2>What can you turn Pixie into?</h2>
-    <p class="lead">Ask, and Pixie builds the tool, mounts the panel, or retunes the loop to match. Every change is gated the same way: boundary-checked, typechecked against your real compiler, and trial-run in a throwaway copy of your session before it touches anything real.</p>
+    <h2>A few things Pixie can do.</h2>
+    <p class="lead">Fix a slow endpoint, build a dashboard, or change how the agent works. These are a few examples. What you add next depends on the job.</p>
 
     <div class="cappills">
       <button class="pill active" data-tab="coding">Code</button>
-      <button class="pill" data-tab="reshape">Reshape into a new app</button>
-      <button class="pill" data-tab="interface">Rewrite its own interface</button>
-      <button class="pill" data-tab="runtime">Tune its own loop</button>
+      <button class="pill" data-tab="reshape">Build an app</button>
+      <button class="pill" data-tab="interface">Change the interface</button>
+      <button class="pill" data-tab="runtime">Set the workflow</button>
     </div>
 
     <div class="capstage">
       <div class="capgroup" data-panel="coding">
         <div class="capwindow">
           <div class="termbar">
-            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Pixie</div>
+            <span class="terminal-mark" aria-hidden="true">&gt;_</span><div class="termtitle">pixie</div><span class="terminal-label">SESSION PREVIEW</span>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">the search endpoint is slow under load</span>
@@ -136,25 +191,24 @@
 
 <span class="dim">⣿ Ran 4 tool calls  1.2s &middot; 290 tokens</span>
 
-<span class="prompt-ptr dim">❯</span> <span class="cursor-block">&nbsp;</span></pre>
+</pre><div class="terminal-input"><span class="dim">&gt;</span> <span class="cursor-block">&nbsp;</span></div><div class="terminal-footer"><span>high effort · session active</span><span>shortcuts: ?</span></div>
           </div>
         </div>
         <div class="capcopy">
           <h3>The daily work</h3>
-          <p>Real diagnostics, real profiling, real test runs. The baseline every session starts from, before you ask it to become anything else.</p>
+          <p>Track down a bug, work through a codebase, or check a change. Pixie uses your project’s diagnostics and tests to check its work.</p>
         </div>
       </div>
 
       <div class="capgroup" data-panel="reshape" hidden>
         <div class="capwindow">
           <div class="termbar">
-            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Pixie</div>
+            <span class="terminal-mark" aria-hidden="true">&gt;_</span><div class="termtitle">pixie</div><span class="terminal-label">SESSION PREVIEW</span>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">turn this into a live watchlist, not numbers in a log</span>
 <span class="dim">  thought for 1.8s</span>
-<span class="dim">No market view mounted. Building one, not a ticker of text.</span>
+<span class="dim">I’ll add a watchlist with prices and sparklines.</span>
 <span class="glyph-ok">●</span> market-view</pre>
             <div class="marketview">
               <div class="ticker-tape">
@@ -171,7 +225,7 @@
                 </div>
                 <div class="wl-row">
                   <span class="wl-sym">PANL</span><span class="wl-name">Panel Corp</span>
-                  <svg class="wl-spark" viewBox="0 0 60 20" preserveAspectRatio="none"><polyline points="0,5 10,7 20,6 30,11 40,10 50,14 60,17" fill="none" stroke="#ff5f57" stroke-width="1.5"></polyline></svg>
+                  <svg class="wl-spark" viewBox="0 0 60 20" preserveAspectRatio="none"><polyline points="0,5 10,7 20,6 30,11 40,10 50,14 60,17" fill="none" stroke="var(--term-error)" stroke-width="1.5"></polyline></svg>
                   <span class="wl-price">88.42</span><span class="wl-delta down">&#9660; 0.6%</span>
                 </div>
                 <div class="wl-row">
@@ -181,32 +235,31 @@
                 </div>
                 <div class="wl-row">
                   <span class="wl-sym">MRGE</span><span class="wl-name">Merge Analytics</span>
-                  <svg class="wl-spark" viewBox="0 0 60 20" preserveAspectRatio="none"><polyline points="0,4 10,6 20,10 30,9 40,13 50,15 60,18" fill="none" stroke="#ff5f57" stroke-width="1.5"></polyline></svg>
+                  <svg class="wl-spark" viewBox="0 0 60 20" preserveAspectRatio="none"><polyline points="0,4 10,6 20,10 30,9 40,13 50,15 60,18" fill="none" stroke="var(--term-error)" stroke-width="1.5"></polyline></svg>
                   <span class="wl-price">54.77</span><span class="wl-delta down">&#9660; 3.2%</span>
                 </div>
               </div>
             </div>
             <pre class="termpre"><span class="dim">⣿ Ran 5 tool calls  0.5s &middot; 320 tokens</span>
 
-<span class="prompt-ptr dim">❯</span> <span class="cursor-block">&nbsp;</span></pre>
+</pre><div class="terminal-input"><span class="dim">&gt;</span> <span class="cursor-block">&nbsp;</span></div><div class="terminal-footer"><span>high effort · session active</span><span>shortcuts: ?</span></div>
           </div>
         </div>
         <div class="capcopy">
-          <h3>Ask for it. It becomes the app.</h3>
-          <p>Say what you actually need, and Pixie doesn't bolt on a single chart: it builds the whole screen, a ticker tape, a watchlist, sparklines, mounted together in the same terminal. You ask for the app; it becomes that app.</p>
+          <h3>Build a view for the work.</h3>
+          <p>Ask for a watchlist and get a panel with prices, changes, and sparklines. Keep adding the views and controls you need, in the same terminal.</p>
         </div>
       </div>
 
       <div class="capgroup" data-panel="interface" hidden>
         <div class="capwindow">
           <div class="termbar">
-            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Pixie</div>
+            <span class="terminal-mark" aria-hidden="true">&gt;_</span><div class="termtitle">pixie</div><span class="terminal-label">SESSION PREVIEW</span>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">I keep scrolling up to check which files we've touched</span>
 <span class="dim">  thought for 1.2s</span>
-<span class="dim">Not another log line. Pinning the file list instead.</span>
+<span class="dim">I’ll keep the changed files in a side panel.</span>
 <span class="glyph-ok">●</span> file-rail, status-bar</pre>
           </div>
           <div class="ideshell">
@@ -220,72 +273,88 @@
               <div class="ideshell-main">
                 <pre class="termpre"><span class="dim">⣿ Ran 3 tool calls  0.3s &middot; 210 tokens</span>
 
-<span class="prompt-ptr dim">❯</span> <span class="cursor-block">&nbsp;</span></pre>
+</pre>
               </div>
             </div>
             <div class="ideshell-status">
-              <span>main</span><span class="dim">&middot;</span><span>Sonnet 5</span><span class="dim">&middot;</span><span>3 files changed</span><span class="dim">&middot;</span><span>12.4k tokens</span>
+              <span>main</span><span class="dim">&middot;</span><span>3 files changed</span><span class="dim">&middot;</span><span>12.4k tokens</span>
             </div>
           </div>
+          <div class="terminal-bottom"><div class="terminal-input"><span class="dim">&gt;</span> <span class="cursor-block">&nbsp;</span></div><div class="terminal-footer"><span>high effort · session active</span><span>shortcuts: ?</span></div></div>
         </div>
         <div class="capcopy">
-          <h3>Ask for it. It becomes the interface you need.</h3>
-          <p>Say you're tired of scrolling up to remember which files are in play, and Pixie doesn't just answer in text: it pins a running file list to the side and a branch, model, and token count to the bottom, so both stay visible no matter how far the conversation scrolls.</p>
+          <h3>Keep useful details in sight.</h3>
+          <p>Put changed files beside the conversation. Keep the branch and token count below it. Ask Pixie to arrange the session around what you need to see.</p>
         </div>
       </div>
 
       <div class="capgroup" data-panel="runtime" hidden>
         <div class="capwindow">
           <div class="termbar">
-            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-            <div class="termtitle">Pixie</div>
+            <span class="terminal-mark" aria-hidden="true">&gt;_</span><div class="termtitle">pixie</div><span class="terminal-label">SESSION PREVIEW</span>
           </div>
           <div class="termbody">
             <pre class="termpre"><span class="term-userbox">verify after every edit, not batches of five</span>
 <span class="dim">  thought for 1.6s</span>
-<span class="dim">A model can forget by turn ten. Wiring it in.</span>
+<span class="dim">I’ll add a hook to run checks after each edit.</span>
 <span class="glyph-ok">●</span> verify-loop
 <span class="runtimerow"><span class="label">trigger</span><span class="val-old">model remembers to</span> <span class="val-new">fires on every edit</span></span>
-<span class="runtimerow"><span class="label">guarantee</span><span class="val-old">best effort</span> <span class="val-new">can't be skipped</span></span>
+<span class="runtimerow"><span class="label">check</span><span class="val-old">manual</span> <span class="val-new">automatic</span></span>
 
 <span class="dim">⣿ Ran 4 tool calls  0.4s &middot; 250 tokens</span>
 
-<span class="prompt-ptr dim">❯</span> <span class="cursor-block">&nbsp;</span></pre>
+</pre><div class="terminal-input"><span class="dim">&gt;</span> <span class="cursor-block">&nbsp;</span></div><div class="terminal-footer"><span>high effort · session active</span><span>shortcuts: ?</span></div>
           </div>
         </div>
         <div class="capcopy">
-          <h3>Not a reminder, a hook</h3>
-          <p>Telling a model to check more often is a suggestion it can forget three files later. Ask once, and Pixie wires the check into its own tool-call scaffolding: it fires whether the model remembers or not.</p>
+          <h3>Make the checks part of the workflow.</h3>
+          <p>Ask Pixie to run a check after every edit. It can add a hook that runs the check automatically, so you don’t have to keep asking.</p>
         </div>
       </div>
     </div>
   </section>
 
   <div class="grid3">
-    <div><h3>Reshapes on request</h3><p>Ask for a capability it doesn't have and Pixie builds it into itself: a panel, a tool, a command, whatever the work calls for, mounted live.</p></div>
-    <div><h3>Rewriting its own interface</h3><p>New panels and commands mount into a live session, no restart, with automatic rollback if a change misbehaves.</p></div>
-    <div><h3>Engineering-grade</h3><p>Real LSP diagnostics, real typecheck gates, real test runs. Eight providers with automatic failover if one goes down mid-session.</p></div>
-    <div><h3>Honest by default</h3><p>Same doctrine every session: real implementations, no placeholders, no silent failures. A bad approach gets called out, not smoothed over. It'll also flag when you're repeating yourself, uninvited.</p></div>
+    <div><h3>Tools that fit your project</h3><p>Turn your repo’s conventions into commands you can use again. Add the panels and tools your work calls for.</p></div>
+    <div><h3>Changes without a restart</h3><p>Add a command or panel while the session is running. Keep working in the same conversation.</p></div>
+    <div><h3>Checked before loading</h3><p>New extensions go through boundary checks, typechecking, and a trial run before they join the session.</p></div>
+    <div><h3>Clear about the result</h3><p>Pixie is instructed to report failed checks, flag weak approaches, and say what still needs work.</p></div>
   </div>
 
   <section class="feature">
-    <div class="section-tag">Join the waitlist</div>
-    <h2>An agent that becomes what you ask it to be</h2>
-    <p class="lead">Every change goes through the same gate: a boundary check keeps generated code out of Pixie's own internals, an incremental typecheck runs against your real compiler, and a trial run happens in a throwaway copy of your session before anything touches the real one. Only then does it go live; persist it once and it survives restarts. Ask for a player and get a video editor. Ask for a dashboard panel and get a different tool entirely. And yes, it also keeps an eye on its own tool calls: catch it doing the same manual thing three times in a row, and it'll build the tool without being asked. That's the bonus. The point is that you ask, and Pixie becomes it.</p>
+    <svg class="sleeping-cat" viewBox="0 0 180 110" aria-hidden="true" focusable="false">
+      <ellipse cx="91" cy="95" rx="76" ry="5" fill="#e5dbd0" opacity=".5"/>
+      <g class="sleeping-cat-body">
+        <path fill="#cd9153" stroke="#a5652d" stroke-width="2" d="M61 30h50v7h20v12h14v29h-8v14H53V81H36V55h10V40h15Z"/>
+        <path fill="#f1ece2" d="M77 45h33v8h13v27h-15v11H67V79H56V60h21Z"/>
+        <path fill="#b97d40" d="M86 31h6v12h-6Z M104 32h6v12h-6Z M122 40h6v14h-6Z"/>
+      </g>
+      <path fill="#f1ece2" stroke="#a5652d" stroke-width="2" d="M26 54V36h7v6h9v9h23V41h8v-6h7v21h8v23h-8v10H32V82H20V61h6Z"/>
+      <path fill="#cd9153" d="M27 54V38h5v6h9v9h10v12H32v7H21V61h6Z M65 52V43h9v-6h5v20h8v12H67V59h-9v-7Z"/>
+      <path fill="none" stroke="#29231e" stroke-width="2.5" d="M33 68v4h10v-4m19 0v4h10v-4"/>
+      <path fill="#995e4a" d="M49 76h7v4h-7Z"/>
+      <path stroke="#a5652d" stroke-width="1.5" d="M15 77h18m-16 5h16m37-5h18"/>
+      <path fill="#59665b" d="M38 87h31v5H38Z"/>
+      <path fill="#cd9153" stroke="#a5652d" stroke-width="2" d="M135 67h15v9h8v13h-9v7H87V85h45V74h3Z"/>
+      <path fill="#f1ece2" d="M88 86h17v9H88Z"/>
+    </svg>
+    <h2>What would you add first?</h2>
+    <p class="lead">A review command for your team? A panel you keep wishing existed? Bring the idea. We’ll let you know when Pixie is ready to try.</p>
 
     <form class="waitlist" id="waitlist-form-2">
-      <input type="text" name="name" placeholder="Full name" required>
-      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="name" aria-label="Full name" autocomplete="name" placeholder="Full name" required>
+      <input type="email" name="email" aria-label="Email address" autocomplete="email" placeholder="Email address" required>
       <button type="submit">Join waitlist &rarr;</button>
     </form>
-    <div class="fineprint" id="waitlist-fineprint-2">No spam. One email, at launch.</div>
-    <div class="success" id="waitlist-success-2" hidden>You're in. Watch your inbox.</div>
+    <div class="fineprint" role="status" id="waitlist-fineprint-2">One email when Pixie launches. No spam.</div>
+    <div class="success" role="status" id="waitlist-success-2" hidden>Request sent. Watch your inbox.</div>
   </section>
 
+  </main>
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo">Pixie</div>
+        <div class="footer-logo"><img src="mascot.svg" width="26" height="34" alt="">Pixie</div>
         <p class="footer-tag">A product of <a href="https://ecnivs.com" target="_blank" rel="noreferrer">ecnivs</a>.</p>
       </div>
       <nav class="footer-links">

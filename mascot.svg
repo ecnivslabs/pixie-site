@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 -2 88 116" shape-rendering="crispEdges">
+  <title>Pixie ginger and white cat</title>
+  <path fill="#f1ece2" d="M20 0h8v8h24V0h8v8h4v40H48v16h8v16h8v24h16V72h8v32h-8v8H16V80h8V64h8V48H16V8h4Z"/>
+  <path fill="#cd9153" d="M20 0h8v8h4v8h-8v16h-8V8h4Z M52 0h8v8h4v24h-8V16h-8V8h4Z M24 64h8v32H16V80h8Z M80 72h8v32h-8v8H64v-8h16Z"/>
+  <path fill="#706357" d="M24 16h8v16h-8Z M48 16h8v16h-8Z"/>
+  <path fill="#a5652d" d="M8 36h8v2H8Z M8 40h8v2H8Z M64 36h8v2h-8Z M64 40h8v2h-8Z"/>
+  <path fill="none" stroke="#a5652d" stroke-width="3" stroke-linejoin="miter" d="M20 0h8v8h24V0h8v8h4v40H48v16h8v16h8v24h16V72h8v32h-8v8H16V80h8V64h8V48H16V8h4Z"/>
+</svg>
