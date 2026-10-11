@@ -39,15 +39,86 @@ for (const form of document.querySelectorAll("form.waitlist")) {
   bindWaitlistForm(form);
 }
 
-const SPINNER_FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
-const spinnerEls = document.querySelectorAll(".spinner-frame");
-let spinnerFrame = 0;
-if (spinnerEls.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  setInterval(() => {
-    spinnerFrame = (spinnerFrame + 1) % SPINNER_FRAMES.length;
-    for (const el of spinnerEls) el.textContent = SPINNER_FRAMES[spinnerFrame];
-  }, 80);
+const SPINNER_FRAMES = ["^.^", "^.^", "^.^", "^.^", "^.^", "-.-", "^.^", "^.^", "^.^", "^.^"];
+
+function bindActivityRow(row) {
+  const marker = row.querySelector(".spinner-frame");
+  const label = row.querySelector(".activity-text");
+  const time = row.querySelector(".activity-time");
+  const message = label.textContent;
+  const characters = [...new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(message)]
+    .map(({ segment }) => segment);
+  const letters = characters.map((character) => {
+    const span = document.createElement("span");
+    span.textContent = character;
+    return span;
+  });
+  const ellipsis = document.createElement("span");
+  ellipsis.textContent = "…";
+  ellipsis.hidden = true;
+  label.replaceChildren(...letters, ellipsis);
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const startedAt = Date.now();
+  let animationStartedAt = startedAt;
+  const measure = document.createElement("canvas").getContext("2d");
+  let columns = 0;
+  let timer;
+
+  function render() {
+    const elapsed = Math.max(0, Date.now() - startedAt);
+    const seconds = elapsed < 60000 ? Math.floor(elapsed / 1000) : Math.round(elapsed / 1000);
+    const duration = seconds < 60 ? `${seconds}s`
+      : seconds < 3600 ? `${Math.floor(seconds / 60)}m ${seconds % 60}s`
+      : seconds < 86400 ? `${Math.floor(seconds / 3600)}h ${Math.floor(seconds % 3600 / 60)}m ${seconds % 60}s`
+      : `${Math.floor(seconds / 86400)}d ${Math.floor(seconds % 86400 / 3600)}h ${Math.floor(seconds % 3600 / 60)}m`;
+    const fullTime = `(${duration} · esc to interrupt)`;
+    const compactTime = `(${duration})`;
+    let timeText = fullTime;
+    if (columns < fullTime.length + 20) {
+      timeText = columns >= compactTime.length + 10 ? compactTime : "";
+    }
+    time.textContent = timeText;
+    time.hidden = !timeText;
+    const budget = Math.max(0, columns - 4 - (timeText ? timeText.length + 1 : 0));
+    const visible = characters.length <= budget ? characters.length : Math.max(0, budget - 1);
+    const animation = reducedMotion.matches ? 0 : Math.max(0, Date.now() - animationStartedAt);
+    marker.textContent = SPINNER_FRAMES[Math.floor(animation / 160) % SPINNER_FRAMES.length];
+    const displayLength = visible < characters.length ? Math.min(budget, visible + 1) : visible;
+    const head = Math.floor(animation / 80) % (displayLength + 10) - 3;
+    for (const [index, letter] of letters.entries()) {
+      letter.hidden = index >= visible;
+      const distance = Math.min(Math.abs(index - head), Math.abs(index - head - 1));
+      letter.dataset.tone = reducedMotion.matches || distance === 1 ? "muted"
+        : distance === 0 ? "text" : "subtle";
+    }
+    ellipsis.hidden = visible === characters.length || budget === 0;
+    const distance = Math.min(Math.abs(visible - head), Math.abs(visible - head - 1));
+    ellipsis.dataset.tone = reducedMotion.matches || distance === 1 ? "muted"
+      : distance === 0 ? "text" : "subtle";
+  }
+
+  function resize() {
+    const style = getComputedStyle(row);
+    measure.font = `${style.fontSize} ${style.fontFamily}`;
+    columns = Math.floor(row.clientWidth / measure.measureText("0").width);
+    render();
+  }
+
+  function startClock() {
+    clearInterval(timer);
+    animationStartedAt = Date.now();
+    render();
+    timer = setInterval(render, reducedMotion.matches ? 1000 : 80);
+  }
+
+  new ResizeObserver(resize).observe(row);
+  reducedMotion.addEventListener("change", startClock);
+  document.fonts.ready.then(resize);
+  resize();
+  startClock();
 }
+
+for (const row of document.querySelectorAll(".activity-row")) bindActivityRow(row);
 
 for (const group of document.querySelectorAll("[data-tabgroup]")) {
   const tabs = [...group.querySelectorAll("[data-tab]")];
